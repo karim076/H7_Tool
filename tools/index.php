@@ -14,11 +14,29 @@
         <h1>Tools</h1>
         <a href="create.php">Nieuwe tool &gt;</a>
 
-        <!--
+        <?php require_once '..\backend\conn.php';
+            $query="SELECT * FROM tools";
+            $statement = $conn->prepare($query);
+            $statement->execute();
+            $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <table>
+            <tr>
+                <th>Tool</th>
+                <th>Gewicht</th>
+                <th>Locatie</th>
+                <th>Aanschafdatum</th>
+            </tr>
+            <?php foreach($meldingen as $item):?>
+                <tr>
+                    <td><?php echo $item['title']; ?>Tool</td>
+                    <td><?php echo $item['weight']; ?>Gewicht</td>
+                    <td><?php echo $item['location']; ?>Locatie</td>
+                    <td><?php echo $item['since']; ?>Aanschafdatum</td>
+                </tr>
+            <?php endforeach;?>
+        </table>
 
-            Hier komt je code om het overzicht van alle tools te laten zien.
-
-         -->
         
     </div>  
 
