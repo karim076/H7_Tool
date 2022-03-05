@@ -153,15 +153,28 @@ label{
     width: 600px;
 }
 
+/* table css*/
+table
+{
+  width: 100%;
+}
 
+th{
+  text-align: left;
+}
 
-
-
-
-
-
-
-
+tr:nth-child(odd)
+{
+  background-color:#b9f8b9;
+}
+tr:first-child
+{
+  background-color: #90ee90;
+}
+tr:hover
+{
+  background-color:#d3d3d3;
+}
 
 
 
